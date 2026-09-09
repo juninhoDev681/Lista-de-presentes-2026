@@ -66,8 +66,8 @@
     </div>
 
     <script>
-        // Substitua a string vazia abaixo pela sua chave Anon/Public correta do painel do Supabase se necessário
-        const SUPABASE_URL = "https://vcgdeabjnvwvajyuxbim.supabase.co";
+        // Configurado com os dados extraídos da sua chave
+        const SUPABASE_URL = "https://vewejbeoblygumoqfigc.supabase.co";
         const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZld2VqYmVvYmx5Z3Vtb3FmaWdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg5MDk4MjEsImV4cCI6MjEwNDQ4NTgyMX0.CAr6rlK2NUrxbheq0qr52gXSEGJ692RAEiJFAwAV0ik"; 
 
         const db = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -83,7 +83,7 @@
         async function load() {
             let r = await db.from("gifts").select("*").order("id");
             if (r.error) {
-                listEl.textContent = "Erro ao carregar. Execute o script SQL no Supabase e confira as permissões e a chave da API.";
+                listEl.textContent = "Erro ao carregar. Execute o script SQL no Supabase e confira as permissões.";
                 return;
             }
             gifts = r.data;
